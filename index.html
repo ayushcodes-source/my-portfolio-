@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush | Web Developer Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div id="particle-container"></div>
+
+    <nav>
+        <div class="logo"> Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" class="section">
+        <div class="hero-content">
+            <h1 class="reveal-text">Hello, I'm <span class="blue-text">Ayush Srivastava</span>.</h1>
+            <p class="reveal-text delay-1">A Web Developer focused on **unique digital experiences**.</p>
+            <a href="#projects" class="cta-button reveal-text delay-2">View My Work</a>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="section-title reveal-text">My Creative Projects</h2>
+        <div class="project-grid">
+            
+            <div class="project-card reveal-item">
+                <h3>My Own Agency website</h3>
+                <p>Creovix is a modern marketing agency website I built using HTML, CSS, and JavaScript to showcase services like video editing, thumbnail design, and web development.
+I’ll keep improving it further by adding backend features and dynamic content in the future.</p>
+                <a href="#" target="_blank" class="project-link">Live Demo &rarr;</a>
+            </div>
+
+            <div class="project-card reveal-item">
+                <h3>My own Portfolio</h3>
+                <p>This is my personal portfolio website built using HTML, CSS, and JavaScript to showcase my projects, and creative work as a web developer.
+In the future, I’ll make this website even better and add more projects as I continue improving my skills.</p>
+                <a href="#" target="_blank" class="project-link">Live Demo &rarr;</a>
+            </div>
+
+        </div>
+    </section>
+
+   <section id="contact" class="section">
+    <h2 class="section-title reveal-text">Get In Touch</h2>
+    
+    <form action="https://api.web3forms.com/submit" method="POST" class="reveal-item">
+        
+        <input type="hidden" name="access_key" value="681ab7c8-1f11-4a4a-88f6-0ab4f0cef03d"> 
+        
+        <input type="hidden" name="subject" value="New Portfolio Message from [Your Name]">
+        
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message..." required></textarea>
+        
+        <input type="hidden" name="h-captcha" value="false">
+        
+        <button type="submit" class="cta-button">Send Message</button>
+    </form>
+</section>
+
+    <footer>
+        <p>&copy; 2025 Ayush Srivastava. Built with pure HTML, CSS, and JS.</p>
+    </footer>
+
+    <script src="./index.js"></script>
+</body>
+</html>

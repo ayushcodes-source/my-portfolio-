@@ -1,0 +1,397 @@
+/* GLOBAL STYLES & FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --color-dark: #0a0a1a; /* Very dark background */
+    --color-blue: #00bfff; /* Deep, vibrant blue */
+    --color-light: #f0f8ff; /* Light text */
+    --color-bg-secondary: #1a1a33; /* Slightly lighter dark color for cards */
+    --transition-speed: 0.5s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevents horizontal scroll from animations */
+}
+
+a {
+    color: var(--color-blue);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--color-light);
+}
+
+/* NAVIGATION BAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent nav */
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--color-blue);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links a {
+    padding: 10px 15px;
+    font-weight: 600;
+    position: relative;
+}
+
+/* Unique Underline Effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-blue);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+    left: 0;
+}
+
+/* SECTIONS & TITLES */
+.section {
+    padding: 100px 50px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Important for animations */
+}
+
+.section-title {
+    font-size: 3em;
+    margin-bottom: 60px;
+    color: var(--color-blue);
+    position: relative;
+}
+
+/* HERO SECTION SPECIFIC */
+#hero {
+    min-height: 100vh;
+}
+
+.hero-content h1 {
+    font-size: 4.5em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    color: var(--color-light);
+}
+
+.blue-text {
+    color: var(--color-blue);
+}
+
+/* BUTTONS */
+.cta-button {
+    background-color: var(--color-blue);
+    color: var(--color-dark);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--color-blue); /* Glowing effect */
+}
+
+.cta-button:hover {
+    background-color: var(--color-light);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 20px var(--color-blue);
+}
+
+/* PROJECT SECTION */
+.project-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: var(--color-bg-secondary);
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: left;
+    border-left: 5px solid var(--color-blue);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card h3 {
+    color: var(--color-blue);
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* CONTACT FORM */
+
+
+
+/* --- CONTACT SECTION --- */
+
+/* The main contact section */
+#contact {
+    /* Ensures the section takes up the full viewport height if content is short */
+    min-height: 100vh; 
+    padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+/* Section Title Styling */
+.section-title {
+    font-size: 3em;
+    margin-bottom: 60px;
+    color: var(--color-blue); /* Assuming --color-blue is defined, e.g., #00bfff */
+    position: relative;
+}
+
+/* The main form container */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px; /* Limits form width for a cleaner look */
+    width: 100%;
+    margin-top: 20px;
+    padding: 30px;
+    background-color: var(--color-bg-secondary); /* Assuming a dark gray/blue */
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.1); /* Subtle blue glow for form container */
+}
+
+/* Input and Textarea fields */
+form input:not([type="hidden"]), /* Exclude hidden Web3Forms fields from direct styling */
+form textarea {
+    padding: 15px;
+    background-color: var(--color-dark); /* Assuming a very dark background, e.g., #0a0a1a */
+    border: 1px solid var(--color-blue);
+    color: var(--color-light); /* Assuming a light text color, e.g., #f0f8ff */
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Textarea specific styling */
+form textarea {
+    resize: vertical; /* Allows resizing only vertically */
+    min-height: 150px;
+}
+
+/* Focus effect for fields (The Unique part) */
+form input:focus,
+form textarea:focus {
+    border-color: var(--color-light);
+    outline: none;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5); /* Blue glow on focus */
+}
+
+/* Button Styling (Using the cta-button class) */
+.cta-button {
+    background-color: var(--color-blue);
+    color: var(--color-dark);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--color-blue); /* Initial subtle glow */
+}
+
+.cta-button:hover {
+    background-color: var(--color-light);
+    transform: translateY(-3px) scale(1.05); /* Slight lift and scale */
+    box-shadow: 0 0 20px var(--color-blue); /* Brighter glow on hover */
+}
+
+/* --- SCROLL REVEAL ANIMATIONS (Needed for .reveal-text and .reveal-item) --- */
+
+/* Keyframe for the reveal effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initial state (hidden) */
+.reveal-text, .reveal-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Applying animation when the 'visible' class is added by JavaScript */
+.reveal-text.visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.reveal-item.visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* FOOTER */
+footer {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-size: 0.9em;
+    border-top: 1px solid rgba(0, 191, 255, 0.2);
+}
+
+
+/* 🚀 PARTICLE ANIMATION STYLES */
+#particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: -1; /* Keep it behind the content */
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: var(--color-blue);
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle linear infinite;
+    box-shadow: 0 0 5px var(--color-blue);
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* 💫 SCROLL REVEAL ANIMATIONS */
+/* Animation definition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Utility classes for initial state (hidden) */
+.reveal-text, .reveal-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Applying animation after it's been 'revealed' by JS */
+.reveal-text.visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.reveal-item.visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Delay for staggered animation in Hero Section */
+.delay-1.visible { animation-delay: 0.2s; }
+.delay-2.visible { animation-delay: 0.4s; }
+
+/* Grid items delay (for unique staggered look) */
+.project-grid .reveal-item:nth-child(1).visible { animation-delay: 0.1s; }
+.project-grid .reveal-item:nth-child(2).visible { animation-delay: 0.3s; }
+/* Add more :nth-child delays if you have more cards */
+
+
+/* MEDIA QUERIES for Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        padding: 20px 20px;
+    }
+    .nav-links {
+        display: none; /* Simple mobile nav hiding for this example */
+    }
+    .hero-content h1 {
+        font-size: 3em;
+    }
+    .hero-content p {
+        font-size: 1.2em;
+    }
+    .section {
+        padding: 80px 20px;
+    }
+    .section-title {
+        font-size: 2.5em;
+    }
+    .project-card {
+        width: 100%;
+    }
+}
